@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { api } from '../services/api';
+import axios from 'axios'; // Thay thế import api
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -66,8 +66,8 @@ const Register = () => {
       setError('');
       setLoading(true);
       
-      // Gọi API đăng ký công khai
-      const response = await api.post('/auth/public-register-employee', {
+      // Gọi API đăng ký công khai - sử dụng axios trực tiếp
+      const response = await axios.post('/auth/public-register-employee', {
         firstname: formData.firstname,
         lastname: formData.lastname,
         dob: formData.dob,
