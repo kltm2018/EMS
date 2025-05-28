@@ -67,7 +67,7 @@ const Register = () => {
       setLoading(true);
       
       // Gọi API đăng ký công khai - sử dụng axios trực tiếp
-      const response = await axios.post('/auth/public-register-employee', {
+      const response = await axios.post('/api/auth/public-register-employee', {
         firstname: formData.firstname,
         lastname: formData.lastname,
         dob: formData.dob,
